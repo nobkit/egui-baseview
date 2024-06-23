@@ -35,7 +35,7 @@ impl<'a> Queue<'a> {
     }
 }
 
-struct OpenSettings {
+pub struct OpenSettings {
     scale_policy: WindowScalePolicy,
     logical_width: f64,
     logical_height: f64,
@@ -105,7 +105,7 @@ where
     U: FnMut(&egui::Context, &mut Queue, &mut State),
     U: 'static + Send,
 {
-    fn new<B>(
+    pub fn new<B>(
         window: &mut baseview::Window<'_>,
         open_settings: OpenSettings,
         mut build: B,
