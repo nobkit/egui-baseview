@@ -43,7 +43,7 @@ pub struct OpenSettings {
 }
 
 impl OpenSettings {
-    fn new(settings: &WindowOpenOptions) -> Self {
+    pub fn new(settings: &WindowOpenOptions) -> Self {
         // WindowScalePolicy does not implement copy/clone.
         let scale_policy = match &settings.scale {
             WindowScalePolicy::SystemScaleFactor => WindowScalePolicy::SystemScaleFactor,
