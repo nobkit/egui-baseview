@@ -59,6 +59,12 @@ impl OpenSettings {
     }
 }
 
+impl From<WindowOpenOptions> for OpenSettings {
+    fn from(value: WindowOpenOptions) -> Self {
+        OpenSettings::new(&value)
+    }
+}
+
 /// Handles an egui-baseview application
 pub struct EguiWindow<State, U>
 where
